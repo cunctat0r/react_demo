@@ -264,7 +264,7 @@
 					React.createElement(
 						"i",
 						{ className: "material-icons circle" },
-						"person-pin"
+						"person_pin"
 					),
 					React.createElement(
 						"span",
