@@ -140,7 +140,7 @@
 						),
 						React.createElement(
 							"button",
-							{ className: "btn" },
+							{ className: "btn right" },
 							"Tweet"
 						)
 					)

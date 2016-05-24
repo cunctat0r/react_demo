@@ -5,7 +5,7 @@ export default class TweetBox extends React.Component {
 				<div className="input-field">
 					<textarea className="materialize-textarea" />
 					<label>What`s happening?</label>
-					<button className="btn">Tweet</button>
+					<button className="btn right">Tweet</button>
 				</div>				
 			</form>							
 		)
