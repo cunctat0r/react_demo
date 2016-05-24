@@ -47,13 +47,13 @@
   \**************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _greet = __webpack_require__(/*! ./greet.jsx */ 1);
+	var _TweetBox = __webpack_require__(/*! ./components/TweetBox.jsx */ 2);
 	
-	var _greet2 = _interopRequireDefault(_greet);
+	var _TweetBox2 = _interopRequireDefault(_TweetBox);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -73,9 +73,13 @@
 		}
 	
 		_createClass(Main, [{
-			key: 'render',
+			key: "render",
 			value: function render() {
-				return React.createElement(_greet2.default, null);
+				return React.createElement(
+					"div",
+					{ className: "container" },
+					React.createElement(_TweetBox2.default, null)
+				);
 			}
 		}]);
 	
@@ -89,10 +93,11 @@
 	$(documentReady);
 
 /***/ },
-/* 1 */
-/*!***************************************!*\
-  !*** ./app/assets/frontend/greet.jsx ***!
-  \***************************************/
+/* 1 */,
+/* 2 */
+/*!*****************************************************!*\
+  !*** ./app/assets/frontend/components/TweetBox.jsx ***!
+  \*****************************************************/
 /***/ function(module, exports) {
 
 	"use strict";
@@ -109,30 +114,44 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var Greet = function (_React$Component) {
-		_inherits(Greet, _React$Component);
+	var TweetBox = function (_React$Component) {
+		_inherits(TweetBox, _React$Component);
 	
-		function Greet() {
-			_classCallCheck(this, Greet);
+		function TweetBox() {
+			_classCallCheck(this, TweetBox);
 	
-			return _possibleConstructorReturn(this, Object.getPrototypeOf(Greet).apply(this, arguments));
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(TweetBox).apply(this, arguments));
 		}
 	
-		_createClass(Greet, [{
+		_createClass(TweetBox, [{
 			key: "render",
 			value: function render() {
 				return React.createElement(
-					"h1",
+					"div",
 					null,
-					"Hello Watch"
+					React.createElement(
+						"form",
+						null,
+						React.createElement("textarea", null),
+						React.createElement(
+							"label",
+							null,
+							"What`s happening?"
+						),
+						React.createElement(
+							"button",
+							null,
+							"Tweet"
+						)
+					)
 				);
 			}
 		}]);
 	
-		return Greet;
+		return TweetBox;
 	}(React.Component);
 	
-	exports.default = Greet;
+	exports.default = TweetBox;
 
 /***/ }
 /******/ ]);

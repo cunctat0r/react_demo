@@ -1,9 +1,11 @@
-import Greet from './greet.jsx';
+import TweetBox from "./components/TweetBox.jsx"
 
 class Main extends React.Component {
 	render() {
 		return (
-			<Greet />
+			<div className="container">
+				<TweetBox />
+			</div>
 		);
 	}
 }
