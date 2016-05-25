@@ -8,9 +8,13 @@ class Main extends React.Component {
 		this.state = { tweetsList: []};
 	}
 	addTweet(tweetToAdd) {
-		let newTweetsList = this.state.tweetsList;
-		newTweetsList.unshift({ id: Date.now(), name: 'Guest', body: tweetToAdd});
-		this.setState({ tweetsList: newTweetsList});
+		$.post("/tweets", { body: tweetToAdd})
+		.success( savedTweet => {
+			let newTweetsList = this.state.tweetsList;
+			newTweetsList.unshift(savedTweet);
+			this.setState({ tweetsList: newTweetsList });
+		})
+		.error( error => console.log(error));
 	}
 	componentDidMount() {
 		$.ajax("/tweets")
