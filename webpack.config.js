@@ -4,12 +4,12 @@ module.exports = {
         path: __dirname + "/app/assets/javascripts",
         filename: "bundle.js"
     },
-    resolve: {
-        extensions: ['', 'js', 'jsx']        
-    },
     module: {
         loaders: [
-            { test: /\.jsx$/, loader: "babel-loader", exclude: '/node_modules/' }
+            { test: /\.jsx$/, loader: "babel-loader" },    
         ],
+    },
+    resolve: {    
+        extensions: ['', '.js', '.json', '.coffee'] 
     }
 };
