@@ -1,8 +1,10 @@
 import API from "../API.jsx"
 
 export default {
-	getAllTweets() {
-		console.log(1, "TweetActions");
+	getAllTweets() {		
 		API.getAllTweets();
+	},
+	sendTweet(body) {
+		API.createTweet(body);
 	}
 }
