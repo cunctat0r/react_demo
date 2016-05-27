@@ -5,7 +5,6 @@ import TweetsList from "./TweetsList.jsx";
 import TweetStore from "../stores/TweetStore.jsx";
 
 import TweetActions from "../actions/TweetActions.jsx";
-TweetActions.getAllTweets();
 
 let getAppState = () => {
 	return { tweetsList: TweetStore.getAll() };
@@ -18,6 +17,7 @@ export default class Index extends React.Component {
 		this._onChange = this._onChange.bind(this);
 	}	
 	componentDidMount() {
+		TweetActions.getAllTweets();
 		TweetStore.addChangeListener(this._onChange);
 	}
 	componentWillUnmount() {
