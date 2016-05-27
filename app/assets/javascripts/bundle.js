@@ -49,85 +49,16 @@
 
 	"use strict";
 	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	var _Index = __webpack_require__(/*! ./components/Index.jsx */ 15);
 	
-	var _TweetBox = __webpack_require__(/*! ./components/TweetBox.jsx */ 1);
-	
-	var _TweetBox2 = _interopRequireDefault(_TweetBox);
-	
-	var _TweetsList = __webpack_require__(/*! ./components/TweetsList.jsx */ 2);
-	
-	var _TweetsList2 = _interopRequireDefault(_TweetsList);
-	
-	var _TweetStore = __webpack_require__(/*! ./stores/TweetStore.jsx */ 4);
-	
-	var _TweetStore2 = _interopRequireDefault(_TweetStore);
-	
-	var _TweetActions = __webpack_require__(/*! ./actions/TweetActions.jsx */ 12);
-	
-	var _TweetActions2 = _interopRequireDefault(_TweetActions);
+	var _Index2 = _interopRequireDefault(_Index);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-	
-	_TweetActions2.default.getAllTweets();
-	
-	var getAppState = function getAppState() {
-		return { tweetsList: _TweetStore2.default.getAll() };
-	};
-	
-	var Main = function (_React$Component) {
-		_inherits(Main, _React$Component);
-	
-		function Main(props) {
-			_classCallCheck(this, Main);
-	
-			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Main).call(this, props));
-	
-			_this.state = getAppState();
-			_this._onChange = _this._onChange.bind(_this);
-			return _this;
-		}
-	
-		_createClass(Main, [{
-			key: "componentDidMount",
-			value: function componentDidMount() {
-				_TweetStore2.default.addChangeListener(this._onChange);
-			}
-		}, {
-			key: "componentWillUnmount",
-			value: function componentWillUnmount() {
-				_TweetStore2.default.removeChangeListener(this._onChange);
-			}
-		}, {
-			key: "_onChange",
-			value: function _onChange() {
-				this.setState(getAppState());
-			}
-		}, {
-			key: "render",
-			value: function render() {
-				return React.createElement(
-					"div",
-					{ className: "container" },
-					React.createElement(_TweetBox2.default, null),
-					React.createElement(_TweetsList2.default, { tweets: this.state.tweetsList })
-				);
-			}
-		}]);
-	
-		return Main;
-	}(React.Component);
 	
 	var documentReady = function documentReady() {
 		var reactNode = document.getElementById('react');
 		if (reactNode) {
-			ReactDOM.render(React.createElement(Main, null), reactNode);
+			ReactDOM.render(React.createElement(_Index2.default, null), reactNode);
 		}
 	};
 	
@@ -1290,6 +1221,96 @@
 			});
 		}
 	};
+
+/***/ },
+/* 15 */
+/*!**************************************************!*\
+  !*** ./app/assets/frontend/components/Index.jsx ***!
+  \**************************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _TweetBox = __webpack_require__(/*! ./TweetBox.jsx */ 1);
+	
+	var _TweetBox2 = _interopRequireDefault(_TweetBox);
+	
+	var _TweetsList = __webpack_require__(/*! ./TweetsList.jsx */ 2);
+	
+	var _TweetsList2 = _interopRequireDefault(_TweetsList);
+	
+	var _TweetStore = __webpack_require__(/*! ../stores/TweetStore.jsx */ 4);
+	
+	var _TweetStore2 = _interopRequireDefault(_TweetStore);
+	
+	var _TweetActions = __webpack_require__(/*! ../actions/TweetActions.jsx */ 12);
+	
+	var _TweetActions2 = _interopRequireDefault(_TweetActions);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	_TweetActions2.default.getAllTweets();
+	
+	var getAppState = function getAppState() {
+		return { tweetsList: _TweetStore2.default.getAll() };
+	};
+	
+	var Index = function (_React$Component) {
+		_inherits(Index, _React$Component);
+	
+		function Index(props) {
+			_classCallCheck(this, Index);
+	
+			var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Index).call(this, props));
+	
+			_this.state = getAppState();
+			_this._onChange = _this._onChange.bind(_this);
+			return _this;
+		}
+	
+		_createClass(Index, [{
+			key: "componentDidMount",
+			value: function componentDidMount() {
+				_TweetStore2.default.addChangeListener(this._onChange);
+			}
+		}, {
+			key: "componentWillUnmount",
+			value: function componentWillUnmount() {
+				_TweetStore2.default.removeChangeListener(this._onChange);
+			}
+		}, {
+			key: "_onChange",
+			value: function _onChange() {
+				this.setState(getAppState());
+			}
+		}, {
+			key: "render",
+			value: function render() {
+				return React.createElement(
+					"div",
+					{ className: "container" },
+					React.createElement(_TweetBox2.default, null),
+					React.createElement(_TweetsList2.default, { tweets: this.state.tweetsList })
+				);
+			}
+		}]);
+	
+		return Index;
+	}(React.Component);
+	
+	exports.default = Index;
 
 /***/ }
 /******/ ]);
