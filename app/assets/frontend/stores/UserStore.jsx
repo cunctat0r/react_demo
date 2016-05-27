@@ -16,7 +16,10 @@ let UserStore = new UserEventEmitter();
 
 AppDispatcher.register( action => {
 	switch(action.actionType) {
-		
+		case ActionTypes.RECEIVED_USERS:
+			_users = action.rawUsers;
+			UserStore.emitChange();
+			break;
 		default:
 	}
 });
